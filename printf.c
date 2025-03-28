@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	while (format[index] != '\0')
 	{
-		if (!format[index + 1] == '%')
+		if ((!format[index + 1]) == '%')
 		{
 			exit(98);
 			return (-1);
@@ -36,4 +36,5 @@ int _printf(const char *format, ...)
 			index++;
 		}
 		index++;
+	}
 
