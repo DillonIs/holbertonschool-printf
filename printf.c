@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 	unsigned int i;
 	char *s;
 
+
 	if (!format)
 	{
 		return (-1);
@@ -30,27 +31,25 @@ int _printf(const char *format, ...)
 			{
 				return (-1);
 			}
+		switch(format[index + 1])
+                	 {
+                        	case 'c' : i = va_arg(list, int);
+                                   _putchar (i);
+                                   break;
+                        	case 's' : s = va_arg(list, char *);
+                                   puts (s);
+                                   break;
+                        	case '%' : i = va_arg(list, int);
+                                   _putchar('%');
+                                   break;
+                        }
 		}
-		while (format[index] != '%')
+		if (format[index] != '%')
 		{
 			_putchar(format[index]);
-			index++;
 		}
-		index++;
-
-		switch(format[index])
-		{
-			case 'c' : i = va_arg(list, int);
-				   _putchar(i);
-				   break;
-			case 's' : s = va_arg(list, char *);
-				   puts (s);
-				   break;
-			case '%' : i = va_arg(list, int);
-				   _putchar('%');
-				   break;
-		}
+	index++;
 	}
 	va_end(list);
-	return (0);
+	return (1);
 	}
