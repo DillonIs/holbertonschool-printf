@@ -31,7 +31,8 @@ int _printf(const char *format, ...)
 			{
 				return (-1);
 			}
-		switch(format[index + 1])
+		index = index + 1;	
+		switch(format[index])
                 	 {
                         	case 'c' : i = va_arg(list, int);
                                    _putchar (i);
@@ -43,12 +44,13 @@ int _printf(const char *format, ...)
                                    _putchar('%');
                                    break;
                         }
+		index = index + 1;
 		}
 		if (format[index] != '%')
 		{
 			_putchar(format[index]);
 		}
-	index++;
+	index = index + 1;
 	}
 	va_end(list);
 	return (1);
