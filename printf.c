@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	va_list list;
 	int index = 0;
 	unsigned int i;
-	char *s;
+	char *s; 
 	int n;
 
 
@@ -39,7 +39,11 @@ int _printf(const char *format, ...)
                                    _putchar (i);
                                    break;
                         	case 's' : s = va_arg(list, char *);
-                                   puts(s);
+                                   while (*s) /*to print out all letters in the string */
+				{
+				_putchar(*s);
+				s++;
+				}
                                    break;
                         	case '%' : i = va_arg(list, int);
                                    _putchar('%');
