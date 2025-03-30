@@ -15,8 +15,6 @@ int _printf(const char *format, ...)
 	int index = 0;
 	unsigned int i;
 	char *s; 
-	int n;
-
 
 	if (!format)
 	{
@@ -48,11 +46,9 @@ int _printf(const char *format, ...)
                         	case '%' : i = va_arg(list, int);
                                    _putchar('%');
                                    break;
-				case 'd' : n = printnum(va_arg(list,int));
-				_putchar(n);
+				case 'd' : printnum(va_arg(list,int));
 				break;
-				case 'i' : n = printnum(va_arg(list,int));
-				_putchar(n);
+				case 'i' : printnum(va_arg(list,int));
 				break;
                         }
 		index++;
