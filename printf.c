@@ -57,5 +57,5 @@ int _printf(const char *format, ...)
 		index++;
 	}
 	va_end(list);
-	return (index); /* returning index instead of zero because theres a question that asks for length of string */
+	return (index - 1); /* returning index instead of zero because theres a question that asks for length of string */
 }
