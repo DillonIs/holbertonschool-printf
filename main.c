@@ -40,5 +40,8 @@ int main(void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
+    _printf("Double character:[%c%c]\n", 'S', 'S');
+    printf("Double character:[%c%c]\n", 'S', 'S');
+    _printf("hello %s\n", "world", 1, 2, 3, 4);
     return (0);
 }

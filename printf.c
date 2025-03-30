@@ -26,36 +26,32 @@ int _printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
+			index++;
 			if (!format[index + 1])
 			{
 				return (-1);
-			}
-			index++;	
+			}	
 			switch(format[index])
                 	{
                         	case 'c' : i = va_arg(list, int);
 				_putchar (i);
-				index++;	   
-				break;
+				break;	   
                         	case 's' : s = va_arg(list, char *);
 				while (*s) /*to print out all letters in the string */
 				{
 					_putchar(*s);
 					s++;
-				}
-				index++;	   
+				}	   	   
 				break;
-                        	case '%' : i = va_arg(list, int);
+				case 'd' : printnum(va_arg(list,int));	   
+				break;
+				case 'i' : printnum(va_arg(list,int));	   
+				break;
+				case '%' : i = va_arg(list, int);
 				_putchar('%');
-				index++;	   
-				break;
-				case 'd' : printnum(va_arg(list,int));
-				index++;	   
-				break;
-				case 'i' : printnum(va_arg(list,int));
-				index++;	   
-				break;
+		 		break;    		
                         }
+			index++;
 		}
 		_putchar(format[index]); /* taken this out of if loop */
 		index++;
