@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 	int index = 0;
 	unsigned int i;
 	char *s;
+	int n;
 
 
 	if (!format)
@@ -43,16 +44,18 @@ int _printf(const char *format, ...)
                         	case '%' : i = va_arg(list, int);
                                    _putchar('%');
                                    break;
+				case 'd' : n = printnum(va_arg(list,int));
+				_putchar(n);
+				break;
+				case 'i' : n = printnum(va_arg(list,int));
+				_putchar(n);
+				break;
                         }
-		index = index + 1;
+		index++;
 		}
-		if (format[index] != '%')
-		{
-			_putchar(format[index]);
-		}
+		_putchar(format[index]); /* taken this out of if loop */
 		index++;
 	}
 	va_end(list);
-	return (0);
-	}
-
+	return (index); /* returning index instead of zero because theres a question that asks for length of string */
+}
