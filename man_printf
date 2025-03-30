@@ -1,9 +1,9 @@
 .TH man 8 "01 April 2025" "1.0" "_printf man page"
 .SH NAME
-    Printf function
+    Printf - format and print data
     The name of the command or function, followed by a one-line description of what it does.
 .SH SYNOPSIS
-    _printf(...)
+    _printf(*format, argument)
     In the case of a command, you get a formal description of how to run it and what command line options it takes.
 .SH DESCRIPTION
     A textual description of the functioning of the command or function.
