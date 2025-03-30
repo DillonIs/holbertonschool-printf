@@ -35,6 +35,7 @@ int _printf(const char *format, ...)
                 	{
                         	case 'c' : i = va_arg(list, int);
 				_putchar (i);
+				index++;	   
 				break;
                         	case 's' : s = va_arg(list, char *);
 				while (*s) /*to print out all letters in the string */
@@ -42,16 +43,19 @@ int _printf(const char *format, ...)
 					_putchar(*s);
 					s++;
 				}
+				index++;	   
 				break;
                         	case '%' : i = va_arg(list, int);
 				_putchar('%');
+				index++;	   
 				break;
 				case 'd' : printnum(va_arg(list,int));
+				index++;	   
 				break;
 				case 'i' : printnum(va_arg(list,int));
+				index++;	   
 				break;
                         }
-			index++;
 		}
 		_putchar(format[index]); /* taken this out of if loop */
 		index++;
