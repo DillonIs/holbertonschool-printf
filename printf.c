@@ -30,32 +30,32 @@ int _printf(const char *format, ...)
 			{
 				return (-1);
 			}
-		index = index + 1;	
-		switch(format[index])
-                	 {
+			index++;	
+			switch(format[index])
+                	{
                         	case 'c' : i = va_arg(list, int);
-                                   _putchar (i);
-                                   break;
+				_putchar (i);
+				break;
                         	case 's' : s = va_arg(list, char *);
-                                   while (*s) /*to print out all letters in the string */
+				while (*s) /*to print out all letters in the string */
 				{
-				_putchar(*s);
-				s++;
+					_putchar(*s);
+					s++;
 				}
-                                   break;
+				break;
                         	case '%' : i = va_arg(list, int);
-                                   _putchar('%');
-                                   break;
+				_putchar('%');
+				break;
 				case 'd' : printnum(va_arg(list,int));
 				break;
 				case 'i' : printnum(va_arg(list,int));
 				break;
                         }
-		index++;
+			index++;
 		}
 		_putchar(format[index]); /* taken this out of if loop */
 		index++;
 	}
 	va_end(list);
-	return (index - 1); /* returning index instead of zero because theres a question that asks for length of string */
+	return (index); /* returning length of string to acommodate for string length question*/
 }
