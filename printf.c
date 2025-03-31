@@ -4,9 +4,9 @@
 #include "main.h"
 
 /**
+ *_printf - formats and prints data
  *
- *
- *
+ *return: (index) length of string
  *
  */
 int _printf(const char *format, ...)
@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 				_putchar (i);
 				break;	   
                         	case 's' : s = va_arg(list, char *);
-				while (*s) /*to print out all letters in the string */
+				while (*s) 
 				{
 					_putchar(*s);
 					s++;
@@ -53,9 +53,9 @@ int _printf(const char *format, ...)
                         }
 			index++;
 		}
-		_putchar(format[index]); /* taken this out of if loop */
+		_putchar(format[index]);
 		index++;
 	}
 	va_end(list);
-	return (index); /* returning length of string to acommodate for string length question*/
+	return (index);
 }

@@ -1,17 +1,20 @@
-.TH man 8 "01 April 2025" "1.0" "_printf man page"
-.SH NAME
-    Printf - format and print data
-    The name of the command or function, followed by a one-line description of what it does.
-.SH SYNOPSIS
+_printf man 8 "01 April 2025" "1.0" "_printf man page"
+NAME
+    _printf
+    Format and print data
+SYNOPSIS
     _printf(*format, argument)
-    In the case of a command, you get a formal description of how to run it and what command line options it takes.
-.SH DESCRIPTION
-    A textual description of the functioning of the command or function.
-.SH EXAMPLES
-    Some examples of common usage.
-.SH SEE ALSO
+DESCRIPTION
+    %c - Prints a single character 
+    %s - Prints a string
+    %d - Prints an interger
+    %i - Prints an interger
+EXAMPLES
+    _printf("%c", 'H')
+SEE ALSO
     A list of related commands or functions.
-.SH BUGS
-    No known bugs.
-.SH AUTHOR
+BUGS
+   Length is longer than it should be.
+   Double character is formatting and printing incorrectly. 
+AUTHOR
    Isaac Dillon. Marianne Endozo.
