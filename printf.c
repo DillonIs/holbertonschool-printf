@@ -11,51 +11,50 @@
  */
 int _printf(const char *format, ...)
 	{
-	va_list list;
+	va_list args;
 	int index = 0;
-	unsigned int i;
 	char *s; 
+	int count = 0;
 
 	if (!format)
 	{
 		return (-1);
 	}
 
-	va_start(list, format);
+	va_start(args, format);
 	while (format[index] != '\0')
 	{
 		if (format[index] == '%')
 		{
-			index++;
 			if (!format[index + 1])
 			{
 				return (-1);
 			}	
-			switch(format[index])
+			switch(format[index + 1])
                 	{
-                        	case 'c' : i = va_arg(list, int);
-				_putchar (i);
+                        	case 'c' :
+				count += _putchar (va_arg(args, int));
 				break;	   
-                        	case 's' : s = va_arg(list, char *);
+                        	case 's' : s = va_arg(args, char *);
 				while (*s) 
 				{
 					_putchar(*s);
 					s++;
 				}	   	   
 				break;
-				case 'd' : printnum(va_arg(list,int));	   
+				case 'd' : printnum(va_arg(args,int));	   
 				break;
-				case 'i' : printnum(va_arg(list,int));	   
+				case 'i' : printnum(va_arg(args,int));	   
 				break;
-				case '%' : i = va_arg(list, int);
+				case '%' : va_arg(args, int);
 				_putchar('%');
-		 		break;    		
+			   	break;		   
                         }
-			index++;
+			index += 2;
 		}
-		_putchar(format[index]);
+		count += _putchar(format[index]);
 		index++;
 	}
-	va_end(list);
-	return (index);
+	va_end(args);
+	return (count);
 }
