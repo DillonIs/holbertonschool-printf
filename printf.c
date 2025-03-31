@@ -37,6 +37,10 @@ int _printf(const char *format, ...)
 				count++;
 				break;		
                         	case 's' : s = va_arg(args, char *);
+				if (!s)
+				{
+					s = "(null)";
+				}
 				while (*s) 
 				{
 					_putchar(*s);
