@@ -3,6 +3,7 @@
 int printnum(int n)
 {
         int num;
+	int count = 0;
 
 	if (n < 0)
 	{
@@ -18,5 +19,6 @@ int printnum(int n)
 		printnum(num / 10);
 	}
 	_putchar (num % 10 + '0');
-	return (num);
+	count++;
+	return (count);
 }

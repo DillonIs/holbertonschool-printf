@@ -33,24 +33,29 @@ int _printf(const char *format, ...)
 			switch(format[index + 1])
                 	{
                         	case 'c' :
-				count += _putchar (va_arg(args, int));
-				break;	   
+				_putchar (va_arg(args, int));
+				count++;
+				break;		
                         	case 's' : s = va_arg(args, char *);
 				while (*s) 
 				{
 					_putchar(*s);
 					s++;
+					count++;
 				}	   	   
 				break;
-				case 'd' : printnum(va_arg(args,int));	   
+				case 'd' : 
+				count += printnum(va_arg(args,int));
 				break;
-				case 'i' : printnum(va_arg(args,int));	   
+				case 'i' : 
+				count += printnum(va_arg(args,int));	   
 				break;
 				case '%' : va_arg(args, int);
 				_putchar('%');
-			   	break;		   
+			   	break;			
                         }
 			index += 2;
+			continue;
 		}
 		count += _putchar(format[index]);
 		index++;
