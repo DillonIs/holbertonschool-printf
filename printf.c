@@ -52,6 +52,7 @@ int _printf(const char *format, ...)
 				break;
 				case '%' : va_arg(args, int);
 				_putchar('%');
+				count++;
 			   	break;			
                         }
 			index += 2;

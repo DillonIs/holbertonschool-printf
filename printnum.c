@@ -9,6 +9,7 @@ int printnum(int n)
 	{
 	       	_putchar('-');
 		num = -n;
+		count++;
         }
 	else
 	{
@@ -16,7 +17,7 @@ int printnum(int n)
         }
         if (num / 10)
 	{
-		printnum(num / 10);
+		count += printnum(num / 10);
 	}
 	_putchar (num % 10 + '0');
 	count++;
